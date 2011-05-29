@@ -1,0 +1,16 @@
+{
+  "title": "My node.js webservice",
+
+  "server": {
+      "port": 8000,
+      "host": "localhost"
+  },
+
+  "database": {
+      "name": "blog",
+      "port": 3306,
+      "host": "localhost",
+      "user": "root",
+      "password": "root"
+  }
+}
