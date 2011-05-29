@@ -1,0 +1,11 @@
+Requirements:
+-------------
+
+ * node: http://node.js/
+ * npm: http://
+
+ * express.js: http://expressjs.com/
+ * jade: http://jade-lang.com/
+ * mysql-libmysqlclient: http://sannis.github.com/node-mysql-libmysqlclient/examples.html
+ * node-syslog: https://github.com/schamane/node-syslog/
+ * express-resource
