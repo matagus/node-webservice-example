@@ -6,9 +6,8 @@
 
 var express = require('express'),
   Resource = require('express-resource'),
-  Database = require('./libs/db').Database,
   get_logger = require("./libs/logger"),
-  config = require("./libs/config"),
+  Config = require("./libs/config"),
   main = require('./controllers/main');
 
 var app = module.exports = express.createServer();
@@ -32,12 +31,11 @@ app.configure(function(){
   app.use(express.static(__dirname + '/static'));
 
   app.logger = get_logger("ws-server");
-  app.config = config(app.logger);
+  app.config = Config();
 
   // available in templates as settings.title
   app.set('title', app.config.title);
 
-  app.db = new Database(app.config, app.logger);
 });
 
 app.configure('development', function(){
