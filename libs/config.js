@@ -4,9 +4,12 @@
 */
 
 var path = require("path"),
-    fs = require('fs');
+    fs = require('fs'),
+    get_logger = require("./logger");
 
-module.exports = function(logger) {
+module.exports = function() {
+
+  var logger = get_logger("config");
 
   var config;
   logger.info("Reading configuration file...");
