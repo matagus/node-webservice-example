@@ -1,0 +1,14 @@
+## node.js
+
+# Packages
+
+# Installer logs
+
+# Unit test / coverage reports
+
+## VIM
+*.swp
+
+## project
+config.json
+TODO
