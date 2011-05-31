@@ -1,11 +1,11 @@
 /*
  * Module dependencies
  */
-var Item = require('./libs/db').Item;
+var Item = require('../libs/db').Item;
     
 exports.index = {
   json: function(req, res) {
-    Item.all(
+    Item.objects.all(
       function(item_list) { res.send(item_list, 200); },
       function(err) { return next(err); }
     );
@@ -14,7 +14,7 @@ exports.index = {
 
 exports.create = {
   json: function(req, res, next) {
-    Item.create(
+    Item.objects.create(
       req.body, 
       function(item) { res.send(item, 201); },
       function(err) { return next(err); }
@@ -25,7 +25,7 @@ exports.create = {
 exports.show = {
   json: function(req, res) {
     var id = parseInt(req.params.item);
-    Item.get(id,
+    Item.objects.get(id,
       function(item) {
         if (item) res.send(item);
         else res.send({}, 404);
@@ -38,7 +38,7 @@ exports.show = {
 exports.update = {
   json: function(req, res) {
     var id = parseInt(req.params.item);
-    Item.update(
+    Item.objects.update(
       id, req.body,
       function(item) {
         if (item) res.send(item);
@@ -52,7 +52,7 @@ exports.update = {
 exports.destroy = {
   json: function(req, res) {
     var id = parseInt(req.params.item);
-    Item.remove(id,
+    Item.objects.remove(id,
       function(item) {
         if (item) res.send({}, 200);
         else res.send({}, 404);
